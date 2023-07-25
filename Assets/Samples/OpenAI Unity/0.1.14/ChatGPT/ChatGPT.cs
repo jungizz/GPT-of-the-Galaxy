@@ -6,77 +6,80 @@ namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
-        [SerializeField] private InputField inputField;
-        [SerializeField] private Button button;
-        [SerializeField] private ScrollRect scroll;
-        
-        [SerializeField] private RectTransform sent;
-        [SerializeField] private RectTransform received;
+        public string chatgptstring = null;
+    //  [SerializeField] private InputField inputField;
+    //  [SerializeField] private Button button;
+    //  [SerializeField] private ScrollRect scroll;
 
-        private float height;
-        private OpenAIApi openai = new OpenAIApi();
+    [SerializeField] private RectTransform sent;
+    [SerializeField] private RectTransform received;
 
-        private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
+    private float height;
+    private OpenAIApi openai = new OpenAIApi();
 
-        private void Start()
-        {
-            button.onClick.AddListener(SendReply);
-        }
+    private List<ChatMessage> messages = new List<ChatMessage>();
+    private string prompt = "너는 한국인이다. 너는 우주에 대해 잘 안다. You know about galaxy. You keep your responses short and the point. Don't break character. Don't ever mention that you are an AI model.";
 
-        private void AppendMessage(ChatMessage message)
-        {
-            scroll.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
+    // TestToSpeech _TTS;
+    CSSRecord _STT;
 
-            var item = Instantiate(message.Role == "user" ? sent : received, scroll.content);
-            item.GetChild(0).GetChild(0).GetComponent<Text>().text = message.Content;
-            item.anchoredPosition = new Vector2(0, -height);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(item);
-            height += item.sizeDelta.y;
-            scroll.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
-            scroll.verticalNormalizedPosition = 0;
-        }
+    public bool gptflag = false;
+    public string fromgptsentence;
 
-        private async void SendReply()
-        {
-            var newMessage = new ChatMessage()
-            {
-                Role = "user",
-                Content = inputField.text
-            };
-            
-            AppendMessage(newMessage);
-
-            if (messages.Count == 0) newMessage.Content = prompt + "\n" + inputField.text; 
-            
-            messages.Add(newMessage);
-            
-            button.enabled = false;
-            inputField.text = "";
-            inputField.enabled = false;
-            
-            // Complete the instruction
-            var completionResponse = await openai.CreateChatCompletion(new CreateChatCompletionRequest()
-            {
-                Model = "gpt-3.5-turbo-0301",
-                Messages = messages
-            });
-
-            if (completionResponse.Choices != null && completionResponse.Choices.Count > 0)
-            {
-                var message = completionResponse.Choices[0].Message;
-                message.Content = message.Content.Trim();
-                
-                messages.Add(message);
-                AppendMessage(message);
-            }
-            else
-            {
-                Debug.LogWarning("No text was generated from this prompt.");
-            }
-
-            button.enabled = true;
-            inputField.enabled = true;
-        }
+    private void Start()
+    {
+        //_TTS = GameObject.Find("NPC").transform.GetChild(0).GetComponent<TestToSpeech>();
+        _STT = GameObject.Find("Mic").GetComponent<CSSRecord>();
+        // button.onClick.AddListener(SendReply);
+        // StartCoroutine(WaitForIt());
     }
+
+    public void gptclick()
+    {
+        Invoke("SendReply", 9f);
+    }
+
+    public async void SendReply()
+    {
+        var newMessage = new ChatMessage()
+        {
+            Role = "user",
+            Content = _STT.sentence
+        };
+
+        // AppendMessage(newMessage);
+
+        if (messages.Count == 0) newMessage.Content = prompt + "\n" + _STT.sentence;
+
+        messages.Add(newMessage);
+
+        // Complete the instruction
+        var completionResponse = await openai.CreateChatCompletion(new CreateChatCompletionRequest()
+        {
+            Model = "gpt-3.5-turbo-0301",
+            Temperature = 0.1f, // 랜덤대답
+            MaxTokens = 1000,
+            Messages = messages
+        });
+
+        if (completionResponse.Choices != null && completionResponse.Choices.Count > 0)
+        {
+            var message = completionResponse.Choices[0].Message;
+            Debug.Log(message.Content);
+
+            //gptflag = true;
+            fromgptsentence = message.Content;
+            message.Content = message.Content.Trim();
+            messages.Add(message);
+            // AppendMessage(message);
+        }
+        else
+        {
+            Debug.LogWarning("No text was generated from this prompt.");
+        }
+
+        gptflag = false;
+        
+      }
+   }
 }
