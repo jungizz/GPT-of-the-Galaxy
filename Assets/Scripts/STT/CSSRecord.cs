@@ -27,8 +27,8 @@ public class CSSRecord : MonoBehaviour
     public GameObject _Stop;
 
     //  public Image recordingrenderer;
-    public Sprite Recording_Icon;
-    public Sprite StopRecording_Icon;
+    // public Sprite Recording_Icon;
+    // public Sprite StopRecording_Icon;
 
 
     // 사용할 언어(Kor)를 맨 뒤에 붙임
@@ -52,42 +52,6 @@ public class CSSRecord : MonoBehaviour
     {
         Debug.Log("start recording");
         _recording = Microphone.Start(_microphoneID, false, _recordingLengthSec, _recordingHZ);
-        //	recordingrenderer.sprite = Recording_Icon; // Recording Icon (Red)
-        //	audioclick = true;
-        /*
-        if(!audioclick){
-             Debug.Log("start recording");
-             _recording = Microphone.Start(_microphoneID, false, _recordingLengthSec, _recordingHZ);
-             recordingrenderer.sprite = Recording_Icon; // Recording Icon (Red)
-             audioclick = true;
-
-        }else{
-
-        // Recording audio
-            if (Microphone.IsRecording(_microphoneID))
-        {
-            Microphone.End(_microphoneID);
-
-            recordingrenderer.sprite = StopRecording_Icon; // Stop Recording Icon (Blue)
-            Debug.Log("stop recording");
-            if (_recording == null)
-            {
-                Debug.LogError("nothing recorded");
-                return;
-            }
-            // audio clip to byte array
-            byte[] byteData = getByteFromAudioClip(_recording);
-
-
-            // 녹음된 audioclip api 서버로 보냄
-            StartCoroutine(PostVoice(url, byteData));
-        }
-        // 녹음 종료
-        audioclick = false;
-        return;
-
-        }
-        */
 
         _Play.SetActive(false);
         _Stop.SetActive(true);
@@ -276,8 +240,8 @@ public class CSSRecord : MonoBehaviour
 
 
         // 요청 헤더 설정
-        request.SetRequestHeader("X-NCP-APIGW-API-KEY-ID", "wmd38nv1fh");
-        request.SetRequestHeader("X-NCP-APIGW-API-KEY", "Stbjc6SGyVef8HXFtmlbDso4kARnsOcibEf1qTGi");
+        request.SetRequestHeader("X-NCP-APIGW-API-KEY-ID", "vb1kbmne6j");
+        request.SetRequestHeader("X-NCP-APIGW-API-KEY", "azKceAfpcDu7ETDusTvzI9bZ19TWP3DkbfoVhrr7");
         request.SetRequestHeader("Content-Type", "application/octet-stream");
 
 
