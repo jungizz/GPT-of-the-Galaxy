@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 97252888}
   - component: {fileID: 97252887}
   - component: {fileID: 97252893}
+  - component: {fileID: 97252898}
   - component: {fileID: 97252892}
   - component: {fileID: 97252891}
   - component: {fileID: 97252895}
@@ -419,7 +420,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97252886}
   m_Enabled: 1
-  m_Force: {x: 0, y: -3.71, z: 0}
+  m_Force: {x: 0, y: -274, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -439,6 +440,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &97252898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97252886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94739257f1cd5d24ba97d70e46b3b71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpButton: {fileID: 7894017111972638675, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  jumpHeight: 1.5
 --- !u!1 &105953157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1528,7 @@ GameObject:
   - component: {fileID: 560969617}
   - component: {fileID: 560969616}
   m_Layer: 0
-  m_Name: JupiterPlane
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1552,7 +1568,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0645916ba390ded4c882fbd783b180e0, type: 2}
+  - {fileID: 2100000, guid: b48953300f757ab4ca93f003963c22d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1767,7 +1783,7 @@ GameObject:
   - component: {fileID: 638327066}
   - component: {fileID: 638327065}
   m_Layer: 5
-  m_Name: About Jpiter
+  m_Name: About Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3630,7 +3646,7 @@ GameObject:
   - component: {fileID: 1192551831}
   - component: {fileID: 1192551836}
   m_Layer: 5
-  m_Name: Jupiter_Canvas
+  m_Name: Sun_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4434,7 +4450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0994aa00c05f243328fbf57b618bdfb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0c0a0eaf6b414093837f6bd28743fcd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5063,7 +5079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jupiter
+  m_text: Venus
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
