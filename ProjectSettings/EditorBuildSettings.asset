@@ -17,6 +17,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Task4.unity
     guid: c6251bbda82280d42ba07766cc3be049
+  - enabled: 1
+    path: Assets/Scenes/Intro/Intro2.unity
+    guid: aaf2643804323254bbf8ea04fcb7e865
+  - enabled: 1
+    path: Assets/Scenes/Intro/Option.unity
+    guid: c7ad1a8a63d1df2438bf941334c67a0b
+  - enabled: 1
+    path: Assets/Scenes/Intro/Intro1.unity
+    guid: 8041419c74b97f24ab8ff7394669bf0a
+  - enabled: 1
+    path: Assets/Scenes/Intro/Title.unity
+    guid: baa97288c1d19614997cf28205fd4dd0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 324a60254ffbcec409fe99fdead25522,
       type: 2}
