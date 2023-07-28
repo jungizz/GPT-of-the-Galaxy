@@ -6,9 +6,7 @@ using TMPro;
 
 public class TypingEffect : MonoBehaviour
 {
-    //public TextMeshProUGUI text;
-    public Text text;
-    //public Text tx;
+    public TextMeshProUGUI text;
 
     public List<string> _dialog = new List<string>();
 
