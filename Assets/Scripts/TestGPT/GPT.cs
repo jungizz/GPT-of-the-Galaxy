@@ -29,6 +29,7 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi();
 
         private List<ChatMessage> messages = new List<ChatMessage>();
+        private string prompt = "너는 한국어만 사용한다. 너는 우주에 대해 잘 안다. You keep your responses short and the point. Don't break character.";
 
         [SerializeField] private AudioSource audioSource;
 
@@ -69,7 +70,7 @@ namespace OpenAI
 
         public async void EndRecording()
         {
-            message.text = "Transcripting...";
+            message.text = "입력 중...";
 
 #if !UNITY_WEBGL
             Microphone.End(null);
@@ -82,13 +83,15 @@ namespace OpenAI
                 FileData = new FileData() { Data = data, Name = "audio.wav" },
                 // File = Application.persistentDataPath + "/" + fileName,
                 Model = "whisper-1",
-                Language = "en"
+                Temperature = 0.1f, // 랜덤대답
+                //MaxTokens = 1000,
+                Language = "ko"
             };
             var res = await openai.CreateAudioTranscription(req);
 
             progressBar.fillAmount = 0;
             message.text = res.Text;
-            answer.text = "Answering...";
+            answer.text = "답변 중...";
             recordButton.enabled = true;
 
             ChatMessage newMessage = new ChatMessage();
