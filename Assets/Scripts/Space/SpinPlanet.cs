@@ -10,6 +10,7 @@ public class SpinPlanet : MonoBehaviour
     private float rotateRadius; //회전 반지름
     private float rotateAngle; //회전 각도
 
+
     void Start()
     {
         rotateRadius = transform.localPosition.x; //원점(태양)으로부터의 거리

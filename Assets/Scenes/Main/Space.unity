@@ -143,18 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 98.7
   orbitRotateSpeed: 0.45
---- !u!114 &59371224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59371214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &59371225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,9 +193,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 59371230}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,6 +244,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &59371230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59371214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!4 &71712721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8429981633443581382, guid: 1670dca8ee98f864eb412b51a24c08e1,
@@ -323,14 +325,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97252886}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -11.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.7083395, z: 0}
+  m_LocalScale: {x: 0.73877066, y: 6.1805654, z: 0.73877066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 945003525}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 935468480}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &97252891
 MonoBehaviour:
@@ -482,18 +484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 9.2
   orbitRotateSpeed: 0.29
---- !u!114 &374386146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374386136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &374386147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,9 +534,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 374386152}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -595,6 +585,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &374386152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374386136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &409067319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -1409,18 +1413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 0.06
   orbitRotateSpeed: 0.47
---- !u!114 &713448988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713448978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &713448989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,9 +1463,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 713448994}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1522,6 +1514,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &713448994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713448978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &825384340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1708249022055328843, guid: 41828032788b38e41b355829fc14bf0f,
@@ -1542,18 +1548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 25.9
   orbitRotateSpeed: 0.3
---- !u!114 &825384350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825384340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &825384351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,9 +1598,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 825384356}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1655,6 +1649,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &825384356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825384340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2317,39 @@ MonoBehaviour:
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
   m_AnchorRotationMode: 0
+--- !u!1 &935468479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935468480}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935468480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935468479}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: -27}
+  m_LocalScale: {x: 1.3536, y: 0.1617975, z: 1.3536}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 97252889}
+  - {fileID: 1961970095}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945003524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,18 +2404,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 26.8
   orbitRotateSpeed: 0.25
---- !u!114 &1114070463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114070453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1114070464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2425,9 +2454,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 1114070469}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2476,6 +2505,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1114070469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114070453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &1119936875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,9 +2805,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1229553373}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 1229553378}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2813,7 +2856,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1229553373
+--- !u!114 &1229553378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2825,6 +2868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &1524877268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4564589014707882925, guid: 3c91d3511c52dc346b7748ddf9b729e5,
@@ -2845,18 +2890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 4.8
   orbitRotateSpeed: 0.24
---- !u!114 &1524877278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524877268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1524877279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2907,9 +2940,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 1524877284}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2958,6 +2991,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1524877284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524877268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &1725429387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,18 +3071,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 0.92
   orbitRotateSpeed: 0.01
---- !u!114 &1946056967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946056957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1946056968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3086,9 +3121,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 1946056973}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3137,6 +3172,131 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1946056973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946056957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
+--- !u!1 &1961970091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961970095}
+  - component: {fileID: 1961970094}
+  - component: {fileID: 1961970093}
+  - component: {fileID: 1961970092}
+  - component: {fileID: 1961970096}
+  m_Layer: 0
+  m_Name: miniSpaceship
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1961970092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961970091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1961970093
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961970091}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1961970094
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961970091}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1961970095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961970091}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 935468480}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961970096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961970091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211a10e40b298794c906b476e4f618c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 97252886}
 --- !u!1 &2040462222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1212433167113680487, guid: 0e707fe2e3b06034b9f756e7d8b744a5,
@@ -3157,18 +3317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 126
   orbitRotateSpeed: 0.6
---- !u!114 &2040462232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040462222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2040462233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3219,9 +3367,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 2040462238}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3270,6 +3418,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2040462238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040462222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1 &2108866439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8302133661235370132, guid: 77623355657306840ad39188b9d6db1d,
@@ -3290,18 +3452,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfRotateSpeed: 0.036
   orbitRotateSpeed: 0.35
---- !u!114 &2108866449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108866439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2108866450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3352,9 +3502,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59371224}
-        m_TargetAssemblyTypeName: SpaceToPlanetScene, Assembly-CSharp
-        m_MethodName: changePlanetScene
+      - m_Target: {fileID: 2108866455}
+        m_TargetAssemblyTypeName: PlanetInteraction, Assembly-CSharp
+        m_MethodName: FixCameraToPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3403,6 +3553,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2108866455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108866439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267b1044f8cba3a478bfa7ea4405c4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 97252886}
+  offset: {x: 0, y: 1, z: -10}
 --- !u!1001 &2120672285
 PrefabInstance:
   m_ObjectHideFlags: 0
