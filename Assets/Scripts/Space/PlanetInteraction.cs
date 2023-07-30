@@ -8,14 +8,13 @@ using UnityEngine.UI;
 public class PlanetInteraction : MonoBehaviour
 { 
     public GameObject player;
-    public Vector3 offset = new Vector3 (0, 1, -10); //행성과 카메라 사이 간격
+    public Vector3 offset; //행성과 카메라 사이 간격
 
     public GameObject panel;
 
     private Button btn1;
     private Button btn2;
 
-    private Vector3 prePos; //행성 클릭 전 위치
     private bool moveCam = false;
 
     private void Start()
@@ -34,15 +33,13 @@ public class PlanetInteraction : MonoBehaviour
 
     public void returnPosition()
     {
-        if (moveCam) player.transform.position = prePos;
+        if (moveCam) player.transform.position = new Vector3(0, 4, -27);
         moveCam = false;
         panel.SetActive(false);
     }
 
     public void FixCameraToPlanet()
     {
-        prePos = player.transform.position;
-
         moveCam = true;
 
         //UI활성화 및 클릭한 행성 이름으로 설정
@@ -57,6 +54,8 @@ public class PlanetInteraction : MonoBehaviour
         if (moveCam)
         {
             player.transform.position = Vector3.Lerp(player.transform.position, transform.position + offset, 0.1f);
+            panel.transform.position = player.transform.position + new Vector3(0, 5, 10);
         }
+       
     }
 }
