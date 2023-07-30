@@ -54,10 +54,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Planet/8Neptunus.unity
     guid: 34c3cfd5f0286ac46907e73438c2052c
   - enabled: 1
-    path: Assets/Scenes/Planet/Moon.unity
+    path: Assets/Scenes/Planet/10Moon.unity
     guid: a496a8097e606554cb735127e456ce2b
   - enabled: 1
-    path: Assets/Scenes/Planet/Sun.unity
+    path: Assets/Scenes/Planet/9Sun.unity
     guid: a5f17928cb0332941b53b185e734cfe0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 324a60254ffbcec409fe99fdead25522,
