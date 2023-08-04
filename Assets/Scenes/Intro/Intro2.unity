@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00046217165, g: 0.00059797906, b: 0.0011268692, a: 1}
+  m_IndirectSpecularColor: {r: 0.00043196545, g: 0.0005981752, b: 0.0010855483, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 97252891}
   - component: {fileID: 97252895}
   - component: {fileID: 97252894}
+  - component: {fileID: 97252896}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -349,6 +350,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+--- !u!114 &97252896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97252886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917f2e4f266266941ab3eb5630bf12be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111027367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2524,7 @@ Transform:
   - {fileID: 1762539180}
   - {fileID: 289974629}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163548356
 GameObject:
@@ -2573,13 +2586,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163548356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.050693855, y: 0.95978945, z: 0.24842596, w: 0.12049425}
+  m_LocalPosition: {x: 1.5421942, y: 5.3023176, z: 11.576176}
+  m_LocalScale: {x: 0.14285713, y: 0.14285713, z: 0.14285716}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1172981915}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172981912 stripped
 GameObject:
@@ -2621,6 +2634,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pannel: {fileID: 111027367}
+--- !u!4 &1172981915 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c20d927afdf67c64e8eff32afe170313,
+    type: 3}
+  m_PrefabInstance: {fileID: 1369708845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1195600981
 GameObject:
   m_ObjectHideFlags: 0
