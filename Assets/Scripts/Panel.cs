@@ -8,6 +8,9 @@ public class Panel : MonoBehaviour
     public GameObject panel;
     public GameObject infoPanel1;
     public GameObject infoPanel2;
+    public GameObject info_info;
+    public GameObject info_info2;
+    public GameObject info_info3;
 
     public AudioSource sound;
 
@@ -32,17 +35,41 @@ public class Panel : MonoBehaviour
         sound.Play();
     }
 
-    public void BackInfoPanel1()
-    {
-        infoPanel1.SetActive(false);
-        panel.SetActive(true);
-        sound.Play();
-    }
-
     public void OpenInfoPanel2()
     {
         panel.SetActive(false);
         infoPanel2.SetActive(true);
+        sound.Play();
+    }
+
+    public void OpenInfo_Info1()
+    {
+        info_info.SetActive(true);
+        info_info2.SetActive(false);
+        info_info3.SetActive(false);
+        sound.Play();
+    }
+
+    public void OpenInfo_Info2()
+    {
+        info_info.SetActive(false);
+        info_info2.SetActive(true);
+        info_info3.SetActive(false);
+        sound.Play();
+    }
+
+    public void OpenInfo_Info3()
+    {
+        info_info.SetActive(false);
+        info_info2.SetActive(false);
+        info_info3.SetActive(true);
+        sound.Play();
+    }
+
+    public void BackInfoPanel1()
+    {
+        infoPanel1.SetActive(false);
+        panel.SetActive(true);
         sound.Play();
     }
 

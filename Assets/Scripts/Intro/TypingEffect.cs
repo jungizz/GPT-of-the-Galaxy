@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TypingEffect : MonoBehaviour
 {
@@ -28,8 +29,18 @@ public class TypingEffect : MonoBehaviour
 
     public void NextDialog()
     {
-        Setmsg(_dialog[_dialogNum]);
-        _dialogNum++;
+        if(_dialogNum < _dialog.Count)
+        {
+            Setmsg(_dialog[_dialogNum]);
+            _dialogNum++;
+        }
+        else
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                SceneManager.LoadScene("Intro2");
+            }
+        }
     }
 
     public void Setmsg(string msg)
