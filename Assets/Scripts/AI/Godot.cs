@@ -48,6 +48,7 @@ public class Godot : MonoBehaviour
     {
         Qestion_button.SetActive(false);
         Back_button.SetActive(false);
+        Close_button.SetActive(false);
         GPTUI.SetActive(true);
     }
 }
