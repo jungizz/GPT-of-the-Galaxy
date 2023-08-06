@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +34,12 @@ public class PlanetInteraction : MonoBehaviour
 
     public void returnPosition()
     {
-        if (moveCam) player.transform.position = new Vector3(0, 4, -27);
+        if (moveCam)
+        {
+            player.transform.position = new Vector3(0, 4, -27);
+            player.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
         moveCam = false;
         panel.SetActive(false);
     }
@@ -44,8 +50,7 @@ public class PlanetInteraction : MonoBehaviour
 
         //UI활성화 및 클릭한 행성 이름으로 설정
         panel.SetActive(true);
-        panel.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = this.name.Substring(1);
-       
+        panel.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = Regex.Replace(this.name, @"[^a-zA-Z]", "");
     }
 
     private void Update()
@@ -54,7 +59,9 @@ public class PlanetInteraction : MonoBehaviour
         if (moveCam)
         {
             player.transform.position = Vector3.Lerp(player.transform.position, transform.position + offset, 0.1f);
+            player.transform.LookAt(transform);
             panel.transform.position = player.transform.position + new Vector3(0, 5, 10);
+            
         }
        
     }

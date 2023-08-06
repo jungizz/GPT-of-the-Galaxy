@@ -14,6 +14,10 @@ public class SpinPlanet : MonoBehaviour
     void Start()
     {
         rotateRadius = transform.localPosition.x; //원점(태양)으로부터의 거리
+
+        //달인 경우 지구로부터의 거리
+        if (this.name == "10Moon") 
+            rotateRadius = transform.localPosition.x - GameObject.Find("3Earth").transform.localPosition.x;
     }
 
 
@@ -21,13 +25,21 @@ public class SpinPlanet : MonoBehaviour
     {
         transform.Rotate(0, selfRotateSpeed * Time.deltaTime, 0); //자전
 
-        rotateAngle += Time.deltaTime * orbitRotateSpeed;
+        rotateAngle += Time.deltaTime * orbitRotateSpeed; // 공전
         if(rotateAngle < 360)
         {
-            float xPos = rotateRadius * Mathf.Sin(rotateAngle);
-            float zPos = rotateRadius * Mathf.Cos(rotateAngle);
-
-            //if (gameObject.name == "Moon")
+            float xPos;
+            float zPos;
+            if (gameObject.name != "10Moon")
+            {
+                xPos = rotateRadius * Mathf.Sin(rotateAngle);
+                zPos = rotateRadius * Mathf.Cos(rotateAngle);
+            }
+            else //달인 경우 계산된 값에 원점(태양)과 지구 사이의 거리를 더해줌
+            {
+                xPos = rotateRadius * Mathf.Sin(rotateAngle) + GameObject.Find("3Earth").transform.localPosition.x;
+                zPos = rotateRadius * Mathf.Cos(rotateAngle) + GameObject.Find("3Earth").transform.localPosition.z;
+            }
 
             transform.localPosition = new Vector3(xPos, 0, zPos);
         }
