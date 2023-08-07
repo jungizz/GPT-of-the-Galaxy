@@ -192,7 +192,8 @@ public class Panel : MonoBehaviour
     {
         info2_info.SetActive(true);
         info2_info2.SetActive(false);
-        info2_info3.SetActive(false);
+        if (info2_info3 != null)
+            info2_info3.SetActive(false);
         sound.Play();
     }
 
@@ -200,7 +201,8 @@ public class Panel : MonoBehaviour
     {
         info2_info.SetActive(false);
         info2_info2.SetActive(true);
-        info2_info3.SetActive(false);
+        if (info2_info3 != null)
+            info2_info3.SetActive(false);
         sound.Play();
     }
 
@@ -208,7 +210,8 @@ public class Panel : MonoBehaviour
     {
         info2_info.SetActive(false);
         info2_info2.SetActive(false);
-        info2_info3.SetActive(true);
+        if (info2_info3 != null)
+            info2_info3.SetActive(true);
         sound.Play();
     }
 
