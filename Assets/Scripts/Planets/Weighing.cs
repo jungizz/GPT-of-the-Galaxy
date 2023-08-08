@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class Weighing : MonoBehaviour
 {
     public Text weightText;
+    public AudioSource FinishSound;
 
     private float weight;
     private float gravity;
+
+    private bool isfinish = false;
 
     void Start()
     {
@@ -24,6 +27,7 @@ public class Weighing : MonoBehaviour
             weight = collision.gameObject.GetComponent<Rigidbody>().mass * (gravity/9.8f);
 
             StartCoroutine(IncreaseWeight(weight));
+            
         }
     }
 
@@ -44,7 +48,12 @@ public class Weighing : MonoBehaviour
         if (float.Parse(weightText.text) <= weight)
         {
             StartCoroutine(IncreaseWeight(weight));
-        }
+        }else isfinish = true;
+
     }
 
+    private void Update()
+    {
+        if (isfinish) FinishSound.Play(); isfinish = false;
+    }
 }
