@@ -1523,9 +1523,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1251795258}
-        m_TargetAssemblyTypeName: TypingEffect2, Assembly-CSharp
-        m_MethodName: NextDialog2
+      - m_Target: {fileID: 1251795260}
+        m_TargetAssemblyTypeName: TypingEffect1, Assembly-CSharp
+        m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 1251795253}
   - component: {fileID: 1251795256}
   - component: {fileID: 1251795257}
-  - component: {fileID: 1251795258}
+  - component: {fileID: 1251795260}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -2898,7 +2898,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1251795258
+--- !u!114 &1251795260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2907,7 +2907,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251795252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7aefef66a01924b8b991f477e645b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f9be34ccbca34a8ef4a04a2b30ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1251795257}
@@ -2920,7 +2920,8 @@ MonoBehaviour:
   - "\uAD81\uAE08\uD55C \uC810\uC774 \uC0DD\uAE34\uB2E4\uBA74 \uC5B8\uC81C\uB4E0\uC9C0
     \uB098, \uCE58\uCE58\uD55C\uD14C \uC9C8\uBB38\uD574\uC918! "
   - "\uC790, \uADF8\uB7FC \uD0D0\uD5D8\uC744 \uB5A0\uB098\uBCFC\uAE4C? "
-  - "\uD0D0\uC0AC\uD558\uACE0 \uC2F6\uC740 \uBAA9\uC801\uC9C0\uB97C \uC120\uD0DD\uD574\uC918~ "
+  - "\uB108\uAC00 \uD0D0\uC0AC\uD558\uACE0 \uC2F6\uC740 \uBAA9\uC801\uC9C0\uB97C
+    \uC120\uD0DD\uD574\uC918~ "
   CharPerSeconds: 8
 --- !u!1001 &1369708845
 PrefabInstance:
