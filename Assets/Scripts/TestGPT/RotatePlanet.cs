@@ -17,7 +17,7 @@ public class RotatePlanet : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.up * Time.deltaTime * degreePerSecond);  //혼자서 자전하게 하는 코드
-        planet.position = new Vector3(-0.08f, -11.81f, 1.37f);   //행성 좌표 고정
+        planet.position = new Vector3(4.370182f, -11.91f, 8f);   //행성 좌표 고정
 
         if (isRotating)
         {
