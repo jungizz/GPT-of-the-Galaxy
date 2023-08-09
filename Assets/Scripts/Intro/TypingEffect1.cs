@@ -40,6 +40,11 @@ public class TypingEffect1 : MonoBehaviour
             {
                 SceneManager.LoadScene("Intro2");
             }
+
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                SceneManager.LoadScene("Space");
+            }
         }
     }
 
