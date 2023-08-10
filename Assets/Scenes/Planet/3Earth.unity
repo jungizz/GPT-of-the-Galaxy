@@ -63393,6 +63393,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 1791088724484656718, guid: e8f689599e0d35543b9358930bee693a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849318677238498069, guid: e8f689599e0d35543b9358930bee693a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8f689599e0d35543b9358930bee693a, type: 3}
 --- !u!1 &1869747511 stripped

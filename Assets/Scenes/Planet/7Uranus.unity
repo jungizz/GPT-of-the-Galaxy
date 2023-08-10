@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00046217165, g: 0.00059797906, b: 0.0011268692, a: 1}
+  m_IndirectSpecularColor: {r: 0.00043196545, g: 0.0005981752, b: 0.0010855483, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37734,6 +37734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Uranus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708249022055328843, guid: 41828032788b38e41b355829fc14bf0f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5388653148397846683, guid: 41828032788b38e41b355829fc14bf0f,
         type: 3}

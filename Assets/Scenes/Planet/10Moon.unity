@@ -31863,6 +31863,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon
       objectReference: {fileID: 0}
+    - target: {fileID: 521475494634665594, guid: 0c0de0a6ba00a794aa946ebe26fa6f50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 521475494634665595, guid: 0c0de0a6ba00a794aa946ebe26fa6f50, type: 3}
     - {fileID: 521475494634665588, guid: 0c0de0a6ba00a794aa946ebe26fa6f50, type: 3}

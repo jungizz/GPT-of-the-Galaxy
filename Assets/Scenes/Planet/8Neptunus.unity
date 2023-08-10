@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00046217165, g: 0.00059797906, b: 0.0011268692, a: 1}
+  m_IndirectSpecularColor: {r: 0.00043196545, g: 0.0005981752, b: 0.0010855483, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40086,6 +40086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Neptune
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199335775190020131, guid: 9e3c26f1a691e1c4897781021ac74e63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9062774381270374110, guid: 9e3c26f1a691e1c4897781021ac74e63,
         type: 3}
